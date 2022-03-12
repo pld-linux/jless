@@ -1,16 +1,16 @@
-%define		crates_ver	0.7.2
+%define		crates_ver	0.8.0
 
 Summary:	A command-line JSON viewer
 Name:		jless
-Version:	0.7.2
+Version:	0.8.0
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/PaulJuliusMartinez/jless/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	365df4c8689ed0ffcdcf349e51a77c48
+# Source0-md5:	14ad59d936b92e3a5188ee28f01c7336
 # ./create-crates.sh
 Source1:	%{name}-crates-%{crates_ver}.tar.xz
-# Source1-md5:	ca63ce40619cac55dba2ab0ff661caa1
+# Source1-md5:	d500650ca46a04e62ff6f0bc0f4896a9
 URL:		https://jless.io/
 BuildRequires:	cargo
 BuildRequires:	rpmbuild(macros) >= 2.004
