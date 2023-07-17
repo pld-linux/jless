@@ -1,18 +1,21 @@
-%define		crates_ver	0.8.0
+%define		crates_ver	0.9.0
 
 Summary:	A command-line JSON viewer
 Name:		jless
-Version:	0.8.0
+Version:	0.9.0
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/PaulJuliusMartinez/jless/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	14ad59d936b92e3a5188ee28f01c7336
+# Source0-md5:	5cb028a732112d87190cc48975d46761
 # ./create-crates.sh
 Source1:	%{name}-crates-%{crates_ver}.tar.xz
-# Source1-md5:	d500650ca46a04e62ff6f0bc0f4896a9
+# Source1-md5:	e8763af5ff6f763104076c3817eb8fae
 URL:		https://jless.io/
 BuildRequires:	cargo
+BuildRequires:	libxcb-devel
+BuildRequires:	python3
+BuildRequires:	python3-modules
 BuildRequires:	rpmbuild(macros) >= 2.004
 BuildRequires:	rust
 BuildRequires:	tar >= 1:1.22
@@ -56,7 +59,6 @@ EOF
 
 %build
 export CARGO_HOME="$(pwd)/.cargo"
-export RUSTONIG_SYSTEM_LIBONIG=true
 
 %cargo_build --frozen
 
